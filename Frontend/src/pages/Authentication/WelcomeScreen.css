@@ -5,9 +5,19 @@
   padding: 0;
 }
 
-.auth-container {
+.welcome-screen-container {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hero-section-container {
+  flex: 70;
+  background: whitesmoke;
+  height: 100%;
+}
+
+.auth-container {
+  flex: 30;
 }

@@ -1,17 +1,17 @@
 import HeroSection from "./HeroSection";
-import { Route, Routes } from "react-router-dom";
 import "./WelcomeScreen.css";
 import LogIn from "./LogIn";
 import Registration from "./Registration";
+import { useState } from "react";
 
 const WelcomeScreen = () => {
+  const [logIn, setLogIn] = useState(true);
   return (
-    <div className="auth-container">
+    <div className="welcome-screen-container">
       <HeroSection />
-      <Routes>
-        <Route path="/" element={<LogIn />} />
-        <Route path="/registration" element={<Registration />} />
-      </Routes>
+      <div className="auth-container">
+        {logIn ? <LogIn /> : <Registration />}
+      </div>
     </div>
   );
 };

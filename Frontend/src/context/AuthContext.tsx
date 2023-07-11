@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
-import { useNavigate } from "react-router-dom";
 
 interface User {
   // Define your user object properties here
@@ -16,7 +15,6 @@ const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 function AuthProvider({ children }: React.PropsWithChildren<{}>) {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -41,7 +39,6 @@ function AuthProvider({ children }: React.PropsWithChildren<{}>) {
           console.error("Error during reauthentication:", error);
           setUser(null);
           setIsLoading(false);
-          navigate("/login");
         });
     } else {
       setIsLoading(false);
