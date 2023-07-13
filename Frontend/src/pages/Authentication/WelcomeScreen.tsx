@@ -1,16 +1,18 @@
 import HeroSection from "./HeroSection";
 import "./WelcomeScreen.css";
 import LogIn from "./LogIn";
-import Registration from "./Registration";
-import { useState } from "react";
 
-const WelcomeScreen = () => {
-  const [logIn, setLogIn] = useState(true);
+type WelcomeScreenType = {
+  theme: string;
+  setTheme: (newValue: string) => void;
+};
+
+const WelcomeScreen: React.FC<WelcomeScreenType> = ({ theme, setTheme }) => {
   return (
     <div className="welcome-screen-container">
-      <HeroSection />
+      <HeroSection theme={theme} setTheme={setTheme} />
       <div className="auth-container">
-        {logIn ? <LogIn /> : <Registration />}
+        <LogIn />
       </div>
     </div>
   );
