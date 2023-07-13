@@ -8,7 +8,6 @@ type HeroSectonType = {
 const HeroSection: React.FC<HeroSectonType> = ({ theme, setTheme }) => {
   return (
     <div className="hero-section-container">
-      <h1>ChatVerse</h1>
       <ThemeSwitch theme={theme} setTheme={setTheme} />
     </div>
   );

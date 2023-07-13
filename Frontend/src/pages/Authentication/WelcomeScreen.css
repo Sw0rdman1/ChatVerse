@@ -33,5 +33,6 @@
 }
 
 .login-container {
-  flex: 9;
+  color: var(--text-color);
+  font-size: 20px;
 }
