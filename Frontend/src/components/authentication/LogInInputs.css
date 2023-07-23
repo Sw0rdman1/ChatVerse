@@ -1,0 +1,115 @@
+.input-field {
+  display: flex;
+  align-items: center;
+  background: var(--input-background);
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  padding: 0 10px;
+}
+
+.input {
+  background: transparent;
+  width: 24ch;
+  margin-left: 10px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: var(--text-color);
+  font-size: 18px;
+}
+
+.icon {
+  margin-left: 10px;
+  color: var(--primary-color);
+}
+
+::-webkit-input-placeholder {
+  color: var(--primary-color);
+}
+
+.input-field-with-error span {
+  position: relative;
+  top: -3px;
+  margin-left: 20px;
+  font-size: 16px;
+  color: var(--error-color);
+}
+
+.error {
+  outline: 2px solid var(--error-color);
+  border: 1px solid transparent;
+}
+
+.input-field-with-error {
+  text-align: start;
+  width: 30ch;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 34px;
+  height: 34px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin: 8px;
+  border: 2px solid var(--text-color);
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: var(--text-color) transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.icon-eye {
+  font-size: 22px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.login-button {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.login-button button {
+  font-size: 22px;
+  cursor: pointer;
+  font-weight: 500;
+  width: 60%;
+  height: 42px;
+  background: var(--primary-color);
+  color: whitesmoke;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  margin-top: 20px;
+}
+
+.login-button button:hover {
+  background: var(--primary-color-hover);
+}

@@ -172,6 +172,7 @@
 }
 
 .theme-switch {
-  transform: scale(0.5);
+  transform: scale(0.35);
   width: min-content;
+  height: min-content;
 }

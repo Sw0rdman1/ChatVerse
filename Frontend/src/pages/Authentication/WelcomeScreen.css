@@ -15,10 +15,10 @@
 .hero-section-container {
   flex: 70;
   background: var(--background-color);
+  transition: background-color 0.25s ease-in-out;
   color: var(--text-color);
   height: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
@@ -27,12 +27,52 @@
   height: 100%;
   display: flex;
   background: var(--background-color-transparent);
+  transition: background-color 0.25s ease-in-out;
   color: var(--text-color);
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .login-container {
   color: var(--text-color);
   font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.login-container h1 {
+  font-size: 2.8em;
+  margin-bottom: 0.5em;
+  background: linear-gradient(
+    to right,
+    #4796d6 20%,
+    #6946a7 30%,
+    #4796d6 70%,
+    #396eb9 80%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 500% auto;
+  animation: textShine 4s ease-in-out infinite alternate;
+}
+
+@keyframes textShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.nav-bar {
+  display: flex;
+  width: 100%;
+  height: min-content;
+  align-items: start;
 }
