@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {
-  LogInButton,
+  MyButton,
   MyInputField,
 } from "../../components/authentication/LogInInputs";
 import { emailValidation } from "../../utils/Validation";
@@ -10,8 +10,10 @@ const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleLogIn = () => {};
+
   return (
-    <div className="login-container">
+    <form className="login-container">
       <h1>ChatVerse</h1>
       <MyInputField
         placeholder="Email"
@@ -22,18 +24,10 @@ const LogIn = () => {
         errorText="Invalid email adress"
         validation={emailValidation}
       />
-      {/* <MyInputField
-        placeholder="Password"
-        value={password}
-        onChange={setPassword}
-        type="password"
-        password
-        errorText=""
-        validation={() => true}
-      /> */}
       <PasswordInput value={password} onChange={setPassword} />
-      <LogInButton />
-    </div>
+
+      <MyButton text="Log In" clickHandler={handleLogIn} submit />
+    </form>
   );
 };
 

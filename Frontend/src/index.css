@@ -9,16 +9,16 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --primary-color: #4796d6;
+  --primary-color: rgb(71, 150, 214);
   --primary-color-hover: #65b4f5;
-  --primary-color-transprarent: rgb(105, 70, 167, 0.3);
+  --primary-color-transprarent: rgb(71, 150, 214, 0.7);
   --secondary-color: #6946a7;
 }
 
 [data-theme="light"] {
   --background-color: whitesmoke;
   --background-color-transparent: white;
-  --text-color: #1f2023;
+  --text-color: #4c4d50;
   --input-background: rgb(0, 0, 0, 0.05);
   --error-color: #fd3737;
   --border-color: rgb(0, 0, 0, 0.3);

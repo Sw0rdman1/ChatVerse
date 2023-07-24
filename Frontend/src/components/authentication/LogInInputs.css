@@ -20,11 +20,12 @@
 
 .icon {
   margin-left: 10px;
+  font-size: 22px;
   color: var(--primary-color);
 }
 
 ::-webkit-input-placeholder {
-  color: var(--primary-color);
+  color: var(--text-color);
 }
 
 .input-field-with-error span {
@@ -112,4 +113,24 @@
 
 .login-button button:hover {
   background: var(--primary-color-hover);
+}
+
+.login-button button:focus {
+  background: var(--primary-color-hover);
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-top: 10px;
+  gap: 10px;
+  height: 30px;
+  font-size: 16px;
+}
+
+.remember-me input {
+  height: 17px;
+  width: 17px;
+  margin-top: 3px;
 }

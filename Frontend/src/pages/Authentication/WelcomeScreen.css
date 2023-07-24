@@ -32,16 +32,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 50px;
+  user-select: none;
 }
 
 .login-container {
   color: var(--text-color);
+  flex: 9;
   font-size: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .login-container h1 {
@@ -75,4 +77,10 @@
   width: 100%;
   height: min-content;
   align-items: start;
+}
+
+@media screen and (max-width: 1023px) {
+  .hero-section-container {
+    display: none;
+  }
 }

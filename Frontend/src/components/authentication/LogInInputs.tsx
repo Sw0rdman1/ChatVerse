@@ -84,15 +84,21 @@ const Loader: React.FC<LoaderProps> = ({ displayLoader }) => {
   );
 };
 
-export const LogInButton = () => {
-  const handleLogIn = () => {
-    console.log("Log in");
-  };
+interface MyButtonProps {
+  text: string;
+  clickHandler: () => void;
+  submit?: boolean;
+}
 
+export const MyButton: React.FC<MyButtonProps> = ({
+  text,
+  clickHandler,
+  submit,
+}) => {
   return (
     <div className="login-button">
-      <button type="submit" onClick={handleLogIn}>
-        Log In
+      <button type={submit ? "submit" : "button"} onClick={clickHandler}>
+        {text}
       </button>
     </div>
   );
