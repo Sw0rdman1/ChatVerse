@@ -2,6 +2,7 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import "./LogInInputs.css";
 import { useEffect, useState } from "react";
+import Checkmark from "../reusable/CheckMark";
 
 type MyInputFieldProps = {
   placeholder: string;
@@ -12,9 +13,10 @@ type MyInputFieldProps = {
   name?: boolean;
   validation: (value: string) => boolean;
   errorText: string;
+  setDisabled: (value: boolean) => void;
 };
 
-export const MyInputField: React.FC<MyInputFieldProps> = ({
+export const RegistrationInputField: React.FC<MyInputFieldProps> = ({
   placeholder,
   type,
   value,
@@ -23,27 +25,35 @@ export const MyInputField: React.FC<MyInputFieldProps> = ({
   name,
   validation,
   errorText,
+  setDisabled,
 }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [displayLoader, setDisplayLoader] = useState(false);
+  const [validInput, setValidInput] = useState(false);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };
 
   useEffect(() => {
+    setValidInput(false);
     if (errorText === "") return;
     if (value === "") {
       setErrorMessage("");
       setDisplayLoader(false);
+      setValidInput(false);
+      setDisabled(true);
       return;
     }
     setDisplayLoader(true);
     const timer = setTimeout(() => {
       if (!validation(value)) {
         setErrorMessage(errorText);
+        setDisabled(true);
       } else {
         setErrorMessage("");
+        setValidInput(true);
+        setDisabled(false);
       }
       setDisplayLoader(false);
     }, 1000);
@@ -52,7 +62,15 @@ export const MyInputField: React.FC<MyInputFieldProps> = ({
 
   return (
     <div className="input-field-with-error">
-      <div className={errorMessage ? " input-field error" : "input-field"}>
+      <div
+        className={
+          errorMessage
+            ? "input-field error"
+            : validInput
+            ? "input-field success"
+            : "input-field"
+        }
+      >
         {email ? <MdEmail className="icon" /> : <></>}
         {name ? <BsFillPersonFill className="icon" /> : <></>}
         <input
@@ -62,16 +80,20 @@ export const MyInputField: React.FC<MyInputFieldProps> = ({
           value={value}
           onChange={handleInputChange}
         />
-        <Loader displayLoader={displayLoader} />
+        {validInput ? (
+          <Checkmark size="medium" />
+        ) : (
+          <Loader displayLoader={displayLoader} />
+        )}
       </div>
       <span>{errorMessage}</span>
     </div>
   );
 };
 
-type LoaderProps = {
+interface LoaderProps {
   displayLoader: boolean;
-};
+}
 
 const Loader: React.FC<LoaderProps> = ({ displayLoader }) => {
   return (
@@ -84,21 +106,19 @@ const Loader: React.FC<LoaderProps> = ({ displayLoader }) => {
   );
 };
 
-interface MyButtonProps {
-  text: string;
+interface NextStepButtonProps {
   clickHandler: () => void;
-  submit?: boolean;
+  disabled: boolean;
 }
 
-export const MyButton: React.FC<MyButtonProps> = ({
-  text,
+export const NextStepButton: React.FC<NextStepButtonProps> = ({
   clickHandler,
-  submit,
+  disabled,
 }) => {
   return (
-    <div className="login-button">
-      <button type={submit ? "submit" : "button"} onClick={clickHandler}>
-        {text}
+    <div className="registration-button">
+      <button onClick={clickHandler} disabled={disabled}>
+        Next
       </button>
     </div>
   );

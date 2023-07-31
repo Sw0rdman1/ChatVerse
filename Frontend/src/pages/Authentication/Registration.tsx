@@ -1,4 +1,5 @@
 import { MyButton } from "../../components/authentication/LogInInputs";
+import { RegistrationProvider } from "../../context/RegistrationContext";
 import "./Registration.css";
 import RegistrationSteps from "./RegistrationSteps";
 
@@ -22,8 +23,7 @@ const Registration: React.FC<RegistrationProps> = ({
           <h2>Welcome to </h2>
           <h1>ChatVerse</h1>
           <h3>
-            Join the{" "}
-            <b style={{ color: "var(--primary-color)" }}>chat revolution</b>!
+            Join the <b className="bold-color-text">chat revolution</b>!
             <br />
             Register now and unlock a world of endless conversations and
             unforgettable moments.
@@ -31,7 +31,9 @@ const Registration: React.FC<RegistrationProps> = ({
           <MyButton text="Get Started!" clickHandler={handleClick} />
         </>
       ) : (
-        <RegistrationSteps />
+        <RegistrationProvider>
+          <RegistrationSteps />
+        </RegistrationProvider>
       )}
     </div>
   );

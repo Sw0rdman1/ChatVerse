@@ -134,3 +134,39 @@
   width: 17px;
   margin-top: 3px;
 }
+
+.success {
+  outline: 1px solid var(--success-color);
+  border: 1px solid transparent;
+}
+
+.registration-button button {
+  font-size: 22px;
+  cursor: pointer;
+  font-weight: 500;
+  width: 50%;
+  height: 42px;
+  background: var(--primary-color);
+  color: whitesmoke;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  margin-top: 20px;
+}
+
+.registration-button button:hover {
+  background: var(--primary-color-hover);
+}
+
+.registration-button button:focus {
+  background: var(--primary-color-hover);
+}
+
+.registration-button button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.registration-button {
+  width: 100%;
+}

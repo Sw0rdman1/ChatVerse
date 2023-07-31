@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import "./RegistrationStepper.css"; // Create a CSS file to style the stepper component
 import { RiArrowLeftLine } from "react-icons/ri"; // Import the back arrow icon from React Icons
 
-const RegistrationStepper: React.FC = () => {
-  const [currentStep, setCurrentStep] = useState(1);
+interface RegistrationStepperProps {
+  currentStep: number;
+  setCurrentStep: (value: number) => void;
+}
 
+const RegistrationStepper: React.FC<RegistrationStepperProps> = ({
+  currentStep,
+  setCurrentStep,
+}) => {
   const handleBackStep = () => {
     if (currentStep > 0) {
       setCurrentStep(currentStep - 1);

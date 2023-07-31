@@ -21,6 +21,7 @@
   --text-color: #4c4d50;
   --input-background: rgb(0, 0, 0, 0.05);
   --error-color: #fd3737;
+  --success-color: #7ac142;
   --border-color: rgb(0, 0, 0, 0.3);
   --overlay-color: rgba(0, 0, 0, 0.5);
 }
@@ -32,6 +33,7 @@
   --input-background: rgba(255, 255, 255, 0.1);
   --border-color: rgb(255, 255, 255, 0.3);
   --error-color: #fd3737;
+  --success-color: #7ac142;
   --overlay-color: rgba(255, 255, 255, 0.1);
 }
 

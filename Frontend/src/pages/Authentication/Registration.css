@@ -50,3 +50,37 @@
   color: var(--text-color);
   margin-bottom: 20px;
 }
+
+.registration-steps {
+  position: relative;
+  height: 100%;
+}
+
+.stepper-container {
+  position: absolute;
+  /* Position the child div at the bottom of the parent div */
+  bottom: 20px;
+  /* Center the child div horizontally within the parent div */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.first-step-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.first-step-container h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.first-step-container h3 {
+  font-size: 1.1em;
+  margin-bottom: 40px;
+}
+
+.bold-color-text {
+  color: var(--primary-color);
+}
